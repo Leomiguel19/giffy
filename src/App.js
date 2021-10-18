@@ -1,28 +1,17 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
+import { useState } from "react/cjs/react.development";
 import "./App.css"
-import Gif from "./components/Gifs"
-import getGifs from "./services/getGifs"
+import ListOfGifs from "./components/ListOfGifs"
 
 function App() {
-  	const [gifs, setGifs] = useState([])
-
-	useEffect(function () {
-    	getGifs({keyword: 'programming'}).then(gifs => setGifs(gifs))
-  	}, [])
+	const [keyword, setKeyword ] = useState('shingeki no kyojin')
 
   	return (
     	<div className="App">
-      		<section className="App-content">
-			{
-				gifs.map(({id, title, url}) => 
-					<Gif
-						id={id}
-						key={id}
-						title={title}
-						url={url}
-					/>
-				)
-			}
+      		<section className="App-content">		
+			  	<button onClick={() => setKeyword('tokyo revenger')}>
+				Cambiar keyword</button>
+				<ListOfGifs keyword={keyword}/>			
 			</section>
 		</div>
   	);
