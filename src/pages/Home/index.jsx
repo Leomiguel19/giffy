@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
-import { Link } from "wouter"
+import { Link, useLocation } from "wouter"
 
 const POPULAR_GIFS = ["tokyo revenger", "hunterxhunter", "god of war", "horizon zero dawn", "shingeki no kyojin"]
 
 export default function Home() {
     const [keyword, setKeyword] = useState('')
+    const [path, pushLocation] = useLocation()
+
+    console.log(path)
 
     const handleSubmit = evt => {
         evt.preventDefault()
         // Navegar a otra ruta
-        console.log(keyword)
+        pushLocation(`/search/${keyword}`)
     }
 
     const handleChange = evt => {
