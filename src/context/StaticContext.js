@@ -5,4 +5,4 @@ const Context = React.createContext({
     AprendiendoReact: true
 })
 
-const default Context
+export default Context
