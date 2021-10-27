@@ -8,7 +8,6 @@ const POPULAR_GIFS = ["tokyo revenger", "hunterxhunter", "god of war", "horizon 
 export default function Home() {
     const [keyword, setKeyword] = useState('')
     const [path, pushLocation] = useLocation()
-
     const {loading, gifs} = useGifs()
 
     const handleSubmit = evt => {
