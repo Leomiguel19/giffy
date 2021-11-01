@@ -8,7 +8,6 @@ import { Route, Link } from "wouter"
 
 function App() {
   	return (
-		<StaticContext.Provider>
 			<div className="App">
 				<section className="App-content">
 					<Link to="/">
@@ -25,7 +24,6 @@ function App() {
 						path="/gif/:id" />
 				</section>
 			</div>
-		</StaticContext.Provider>
   	)
 }
 

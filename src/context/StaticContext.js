@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Context = React.createContext({
-    name: 'Leonardo',
+    name: 'Es es desde el provider',
     AprendiendoReact: true
 })
 
